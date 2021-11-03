@@ -6,8 +6,9 @@
 		<router-link to="/login">Se connecter</router-link> |
 		<router-link to="/Signup">S'enregistrer</router-link>
 	</div>
+
+	<!-- <h1>Bienvenue sur le p7 OpenClassRooms</h1> -->
 	<router-view />
-	<h1>Bienvenue sur le p7 OpenClassRooms</h1>
 </template>
 
 <style lang="scss">
@@ -30,5 +31,12 @@
 			color: #42b983;
 		}
 	}
+}
+a {
+	font-weight: bold;
+	color: #fd2d01;
+}
+a:active {
+	text-decoration: none;
 }
 </style>

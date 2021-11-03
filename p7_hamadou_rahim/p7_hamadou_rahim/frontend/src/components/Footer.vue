@@ -15,7 +15,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .footer {
 	position: absolute;
 	bottom: 0;
@@ -34,9 +34,14 @@ export default {
 }
 
 a {
-	/* color: #fd2d01; */
+	color: #fd2d01;
+
+	&:active {
+		text-decoration: none;
+	}
 }
-a:active {
-	text-decoration: none;
+li:hover {
+	transform: scale(1.2);
+	transition: 0.2s;
 }
 </style>

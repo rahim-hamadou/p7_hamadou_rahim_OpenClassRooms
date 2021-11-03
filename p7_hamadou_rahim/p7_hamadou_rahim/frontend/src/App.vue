@@ -1,10 +1,13 @@
 <template>
-	<div id="nav">
-		<h1>Bienvenue sur le p7 OpenClassRooms</h1>
-		<router-link to="/">Home</router-link> |
-		<router-link to="/about">About</router-link>
+	<!-- <div id="nav"> -->
+	<div>
+		<router-link to="/">Home</router-link> | <router-link to="/Forum">Forum</router-link> |
+		<router-link to="/Profil">Profil</router-link> | <router-link to="/ForumId">Mon fil</router-link> |
+		<router-link to="/login">Se connecter</router-link> |
+		<router-link to="/Signup">S'enregistrer</router-link>
 	</div>
 	<router-view />
+	<h1>Bienvenue sur le p7 OpenClassRooms</h1>
 </template>
 
 <style lang="scss">

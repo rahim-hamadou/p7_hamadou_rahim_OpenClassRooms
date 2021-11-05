@@ -22,7 +22,6 @@ export default {
 	width: 100%;
 	height: auto;
 	margin-bottom: 40px;
-	color: #fd2d01;
 }
 .footer-list {
 	display: flex;
@@ -34,11 +33,14 @@ export default {
 }
 
 a {
-	color: #fd2d01;
-
-	&:active {
-		text-decoration: none;
+	font-weight: bold;
+	color: #2c3e50;
+	&.router-link-exact-active {
+		color: #fd2d01;
 	}
+}
+a:hover {
+	color: #fd2d01;
 }
 li:hover {
 	transform: scale(1.2);

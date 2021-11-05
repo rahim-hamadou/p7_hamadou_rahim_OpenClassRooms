@@ -5,6 +5,10 @@
 		<router-link to="/Profil">Profil</router-link> | <router-link to="/ForumId">Mon fil</router-link> |
 		<router-link to="/login">Se connecter</router-link> |
 		<router-link to="/Signup">S'enregistrer</router-link>
+
+		<!-- <router-view></router-view>  - il définit la zone de la page dans laquelle apparaîtra le composant que nous définissons dans chaque route. Il est particulièrement important si vous imbriquez des vues les unes dans les autres ; -->
+		<!-- Ici il n'est pas indispensable -->
+		<!-- <router-view /> -->
 	</div>
 
 	<!-- <h1>Bienvenue sur le p7 OpenClassRooms</h1> -->
@@ -40,7 +44,7 @@ a {
 	}
 }
 a:hover {
-	color: #c55c47;
+	color: #fd2d01;
 
 	transition: 0.5s;
 }

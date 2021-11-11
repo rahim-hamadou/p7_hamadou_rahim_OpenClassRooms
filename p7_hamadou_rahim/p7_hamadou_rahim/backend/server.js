@@ -75,30 +75,30 @@ console.log(`Listen on port ${port}`);
 
 // ------------------------------MYSQL-----------------------------------
 
-// importation de mysql
-const mysql = require("mysql");
-// connecter à votre base MySQL, renseignez l’hôte, l’utilisateur et le mot de passe spécifié lors de l’installation de MySQL
-const db = mysql.createConnection({
-	host: "localhost",
-	user: "p7admin",
-	password: "password",
-	// database: "groupomania",
-});
+// // importation de mysql
+// const mysql = require("mysql");
+// // connecter à votre base MySQL, renseignez l’hôte, l’utilisateur et le mot de passe spécifié lors de l’installation de MySQL
+// const db = mysql.createConnection({
+// 	host: "localhost",
+// 	user: "p7admin",
+// 	password: "password",
+// 	// database: "groupomania",
+// });
 
-const con = mysql.createConnection({
-	host: "localhost",
-	user: "p7admin",
-	password: "password",
-	database: "groupomania",
-});
+// const con = mysql.createConnection({
+// 	host: "localhost",
+// 	user: "p7admin",
+// 	password: "password",
+// 	database: "groupomania",
+// });
 
-con.connect(function (err) {
-	if (err) throw err;
-	console.log("Connecté à la base de données MySQL!");
-	con.query("show databases;", function (err, result) {
-		if (err) throw err;
-		console.log(result);
-	});
-});
+// con.connect(function (err) {
+// 	if (err) throw err;
+// 	console.log("Connecté à la base de données MySQL!");
+// 	con.query("show databases;", function (err, result) {
+// 		if (err) throw err;
+// 		console.log(result);
+// 	});
+// });
 
 // ------------------------------MYSQL-----------------------------------

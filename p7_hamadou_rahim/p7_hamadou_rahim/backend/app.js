@@ -24,9 +24,9 @@ const expressSanitizer = require("express-sanitizer");
 
 // FIN MODULES
 
-// // IMPORTATION ROUTES
+// --------------------------------------IMPORTATION ROUTES
 
-// const userRoutes = require("./routes/user");
+const userRoutes = require("./routes/userRoutes");
 // const postRoutes = require("./routes/post");
 // // FIN IMPORTATIONS
 
@@ -54,7 +54,8 @@ app.use(helmet()); // Protège l'app en paramétrant des Headers (notamment cont
 
 // BODYPARSER
 // appel de la methode body parser pour rendre exploitable toutes les requetes en object js utilisable json
-// Rend le corps de la requête exploitable facilement
+// Transforme le corps de la requête en objet JS
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 // FIN BODYPARSER
 
@@ -68,12 +69,12 @@ app.use(nocache());
 // Protège contre les failles XSS
 app.use(expressSanitizer());
 
-// ROUTES
+// -----------------------------------------ROUTES
 
 // // permet via express de choisir le dossier source des images via la methode path
 // app.use("/images", express.static(path.join(__dirname, "images")));
-// // Va servir les routes dédiées aux utilisateurs
-// app.use("/api/user", userRoutes);
+// Va servir les routes dédiées aux utilisateurs
+app.use("/", userRoutes);
 // // Va servir les routes dédiées aux posts
 // app.use("/api/post", postRoutes);
 
@@ -81,31 +82,31 @@ app.use(expressSanitizer());
 
 // TEST APP
 
-app.post("/api/stuff", (req, res, next) => {
-	console.log(req.body);
-	res.status(201).json({
-		message: "Objet créé !",
-	});
-});
+// app.post("/api/stuff", (req, res, next) => {
+// 	console.log(req.body);
+// 	res.status(201).json({
+// 		message: "Objet créé !",
+// 	});
+// });
 
-app.use((req, res, next) => {
-	console.log("Requête reçue !");
-	next();
-});
+// app.use((req, res, next) => {
+// 	console.log("Requête reçue !");
+// 	next();
+// });
 
-app.use((req, res, next) => {
-	res.status(201);
-	next();
-});
+// app.use((req, res, next) => {
+// 	res.status(201);
+// 	next();
+// });
 
-app.use((req, res, next) => {
-	res.json({ message: "Votre requête a bien été reçue !!" });
-	next();
-});
+// app.use((req, res, next) => {
+// 	res.json({ message: "Votre requête a bien été reçue !!!" });
+// 	next();
+// });
 
-app.use((req, res, next) => {
-	console.log("Réponse envoyée avec succès !");
-});
+// app.use((req, res, next) => {
+// 	console.log("Réponse envoyée avec succès !");
+// });
 
 // FIN TEST APP
 

@@ -1,6 +1,10 @@
 // Imports
+
+// importation des modeles
 var models = require("../models");
+// importation du module async qui sert a ordonée les fonctions
 var asyncLib = require("async");
+// importation du module de verification des token
 var jwtUtils = require("../utils/jwt.utils");
 
 // Constants
@@ -95,6 +99,6 @@ exports.listMessages = function (req, res) {
 		})
 		.catch(function (err) {
 			console.log(err);
-			res.status(500).json({ error: "invalid fields" });
+			res.status(500).json({ error: "invalid fields!" });
 		});
 };

@@ -6,7 +6,7 @@ const bcrypt = require("bcrypt");
 // module qui génère le token
 // npm install --save jsonwebtoken
 const jwtUtils = require("../utils/jwt.utils");
-// importation du modele d'element
+// importation des modeles
 const models = require("../models");
 // importation du module async qui sert a ordonée les fonctions
 const asyncLib = require("async");

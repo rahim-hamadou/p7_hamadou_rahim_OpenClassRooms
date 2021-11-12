@@ -35,7 +35,7 @@ module.exports = (sequelize, DataTypes) => {
 	}
 	Like.init(
 		{
-			messagesId: {
+			messageId: {
 				type: DataTypes.INTEGER,
 				references: {
 					model: "Message",

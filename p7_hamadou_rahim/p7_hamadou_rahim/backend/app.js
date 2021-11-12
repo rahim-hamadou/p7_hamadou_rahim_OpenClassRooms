@@ -27,8 +27,9 @@ const expressSanitizer = require("express-sanitizer");
 // --------------------------------------IMPORTATION ROUTES
 
 const userRoutes = require("./routes/userRoutes");
-// const postRoutes = require("./routes/post");
-// // FIN IMPORTATIONS
+const messageRoutes = require("./routes/messageRoutes");
+
+// FIN IMPORTATIONS
 
 // PARAMETRAGE DES HEADERS
 // creation  d'une exception CORS pour autoriser la lecture de la reponse par le client
@@ -75,6 +76,10 @@ app.use(expressSanitizer());
 // app.use("/images", express.static(path.join(__dirname, "images")));
 // Va servir les routes dédiées aux utilisateurs
 app.use("/", userRoutes);
+
+// Va servir les routes dédiées aux messages
+app.use("/", messageRoutes);
+
 // // Va servir les routes dédiées aux posts
 // app.use("/api/post", postRoutes);
 

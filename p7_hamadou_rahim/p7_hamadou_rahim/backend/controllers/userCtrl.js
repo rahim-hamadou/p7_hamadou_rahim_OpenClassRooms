@@ -162,7 +162,7 @@ exports.updateUserProfile = function (req, res) {
 						done(null, userFound);
 					})
 					.catch(function (err) {
-						return res.status(500).json({ error: "unable to verify user" });
+						return res.status(500).json({ error: "utilisateur introuvable" });
 					});
 			},
 			function (userFound, done) {
@@ -175,10 +175,10 @@ exports.updateUserProfile = function (req, res) {
 							done(userFound);
 						})
 						.catch(function (err) {
-							res.status(500).json({ error: "cannot update user" });
+							res.status(500).json({ error: "Impossible de mettre a jour" });
 						});
 				} else {
-					res.status(404).json({ error: "user not found" });
+					res.status(404).json({ error: "utilisateur introuvable" });
 				}
 			},
 		],

@@ -15,6 +15,7 @@ router.post("/login", userCtrl.login);
 
 // route utilisation
 router.get("/account", userCtrl.getUserProfile);
+router.put("/account", userCtrl.updateUserProfile);
 
 // ----------------------------Export
 

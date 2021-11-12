@@ -19,7 +19,7 @@ const password_regex = /^(?=.*[\d])(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&*])[\w!@#$
 const username_regex = /^[A-Za-z0-9]+(?:[ _-][A-Za-z0-9]+)*$/;
 // --------------------------------Fonctions
 
-// creation d'un user
+// Creation d'un user
 exports.signup = async (req, res) => {
 	// params
 	const email = req.body.email;
@@ -77,7 +77,7 @@ exports.signup = async (req, res) => {
 	});
 };
 
-// connexion d'un user
+// Connexion d'un user
 exports.login = async (req, res) => {
 	// params
 	const email = req.body.email;
@@ -112,7 +112,7 @@ exports.login = async (req, res) => {
 		});
 };
 
-// recherche user
+// Recherche user
 exports.getUserProfile = function (req, res) {
 	// params
 	// verif du token avnat la req base de donnée
@@ -140,3 +140,96 @@ exports.getUserProfile = function (req, res) {
 			res.status(500).json({ error: "User non chargé" });
 		});
 };
+
+// Update user via l'utilisation de asyncLib
+
+exports.updateUserProfile = function (req, res) {
+	// Getting auth header
+	var headerAuth = req.headers["authorization"];
+	var userId = jwtUtils.getUserId(headerAuth);
+
+	// Params
+	var bio = req.body.bio;
+
+	asyncLib.waterfall(
+		[
+			function (done) {
+				models.User.findOne({
+					attributes: ["id", "bio"],
+					where: { id: userId },
+				})
+					.then(function (userFound) {
+						done(null, userFound);
+					})
+					.catch(function (err) {
+						return res.status(500).json({ error: "unable to verify user" });
+					});
+			},
+			function (userFound, done) {
+				if (userFound) {
+					userFound
+						.update({
+							bio: bio ? bio : userFound.bio,
+						})
+						.then(function () {
+							done(userFound);
+						})
+						.catch(function (err) {
+							res.status(500).json({ error: "cannot update user" });
+						});
+				} else {
+					res.status(404).json({ error: "user not found" });
+				}
+			},
+		],
+		function (userFound) {
+			if (userFound) {
+				return res.status(201).json(userFound);
+			} else {
+				return res.status(500).json({ error: "cannot update user profile" });
+			}
+		},
+	);
+};
+
+// exports.updateUserProfile = function (req, res) {
+// 	// autorisation via header
+// 	// verif du token avnat la req base de donnée
+// 	const headerAuth = req.headers["authorization"];
+// 	const userId = jwtUtils.getUserId(headerAuth);
+
+// 	// params
+// 	let bio = req.body.bio;
+
+// 	models.User.findOne({
+// 		attributes: ["id", "bio"],
+// 		where: { id: userId },
+// 	})
+// 		.then(function (userFound) {
+// 			if (userFound) {
+// 			}
+// 		})
+// 		.catch(function (err) {
+// 			return res.status(500).json({ error: "Impossible de verifier le profil" });
+// 		});
+
+// 	if (userFound) {
+// 		userFound
+// 			.update({
+// 				bio: bio ? bio : userFound.bio,
+// 			})
+// 			.then(function () {
+// 				done(userFound);
+// 			})
+// 			.catch(function (err) {
+// 				res.status(500).json({ error: "Impossible de mettre a jour" });
+// 			});
+// 	} else {
+// 		res.status(404).json({ error: "utilisateur introuvable" });
+// 	}
+// 	if (userFound) {
+// 		return res.status(201).json(userFound);
+// 	} else {
+// 		return res.status(500).json({ error: "Mise a jour du profil impossible" });
+// 	}
+// };

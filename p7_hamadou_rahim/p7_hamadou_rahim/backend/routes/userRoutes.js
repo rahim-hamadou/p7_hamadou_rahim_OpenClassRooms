@@ -9,8 +9,12 @@ const router = express.Router();
 
 // ----------------------------Routes
 
+// route connexion
 router.post("/signup", userCtrl.signup);
 router.post("/login", userCtrl.login);
+
+// route utilisation
+router.get("/account", userCtrl.getUserProfile);
 
 // ----------------------------Export
 

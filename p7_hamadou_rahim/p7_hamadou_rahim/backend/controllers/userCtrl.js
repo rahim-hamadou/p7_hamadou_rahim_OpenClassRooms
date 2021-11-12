@@ -8,9 +8,11 @@ const bcrypt = require("bcrypt");
 const jwtUtils = require("../utils/jwt.utils");
 // importation du modele d'element
 const models = require("../models");
+// importation du module async qui sert a ordonée les fonctions
+const asyncLib = require("async");
 
 // --------------------------------REGEX
-
+// via emailregex.com & regexlib.com
 const email_regex =
 	/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 const password_regex = /^(?=.*[\d])(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&*])[\w!@#$%^&*]{8,}$/;
@@ -18,14 +20,14 @@ const username_regex = /^[A-Za-z0-9]+(?:[ _-][A-Za-z0-9]+)*$/;
 // --------------------------------Fonctions
 
 // creation d'un user
-
 exports.signup = async (req, res) => {
 	// params
 	const email = req.body.email;
 	const username = req.body.username;
 	const password = req.body.password;
 	const bio = req.body.bio;
-	// try {
+
+	// verification des champs
 	if (!email || !username || !password || !bio) {
 		return res.status(400).json({ error: "Tous les champs doivent être bien renseignés" });
 	}
@@ -46,6 +48,7 @@ exports.signup = async (req, res) => {
 			error: "Le mot de passe doit contenir entre 8 et 20 caractères dont au moins une lettre majuscule, une lettre minusucle, un chiffre et un symbole",
 		});
 	}
+
 	models.User.findOne({
 		attributes: ["username" || "email"],
 		where: { username: username, email: email },
@@ -74,6 +77,7 @@ exports.signup = async (req, res) => {
 	});
 };
 
+// connexion d'un user
 exports.login = async (req, res) => {
 	// params
 	const email = req.body.email;
@@ -83,7 +87,6 @@ exports.login = async (req, res) => {
 	if (email == null || password == null) {
 		return res.status(400).json({ error: "⚠ Oops, une erreur s'est produite! Veuillez remplir les champs" });
 	}
-
 	models.User.findOne({
 		where: { email: email },
 	})
@@ -94,6 +97,7 @@ exports.login = async (req, res) => {
 						return res.status(200).json({
 							userId: userFound.id,
 							token: jwtUtils.generateTokenForUser(userFound),
+							message: "Bonjour " + userFound.username + " !",
 						});
 					} else {
 						return res.status(403).json({ error: "mot de passe incorrect" });
@@ -105,5 +109,34 @@ exports.login = async (req, res) => {
 		})
 		.catch(function (err) {
 			return res.status(500).json({ error: "impossible de verifier les identifiants" });
+		});
+};
+
+// recherche user
+exports.getUserProfile = function (req, res) {
+	// params
+	// verif du token avnat la req base de donnée
+	const headerAuth = req.headers["authorization"];
+	const userId = jwtUtils.getUserId(headerAuth);
+
+	if (userId < 0) {
+		return res.status(400).json({ error: "Mauvais token" });
+	}
+
+	models.User.findOne({
+		attributes: ["id", "email", "username", "bio", "isAdmin"],
+		where: { id: userId },
+	})
+		.then(function (user) {
+			if (user) {
+				res.status(201).json(user);
+			} else {
+				res.status(404).json({
+					error: "utilisateur introuvable",
+				});
+			}
+		})
+		.catch(function (err) {
+			res.status(500).json({ error: "User non chargé" });
 		});
 };

@@ -13,5 +13,6 @@ router.post("/messages/new", messageCtrl.createMessage);
 
 // lister les messages
 router.get("/messages/", messageCtrl.listMessages);
+
 // ----------------------------Export
 module.exports = router;

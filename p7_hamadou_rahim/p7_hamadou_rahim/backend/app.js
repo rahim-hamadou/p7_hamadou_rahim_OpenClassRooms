@@ -28,6 +28,7 @@ const expressSanitizer = require("express-sanitizer");
 
 const userRoutes = require("./routes/userRoutes");
 const messageRoutes = require("./routes/messageRoutes");
+const likeRoutes = require("./routes/likeRoutes");
 
 // FIN IMPORTATIONS
 
@@ -80,8 +81,8 @@ app.use("/", userRoutes);
 // Va servir les routes dédiées aux messages
 app.use("/", messageRoutes);
 
-// // Va servir les routes dédiées aux posts
-// app.use("/api/post", postRoutes);
+// Va servir les routes dédiées aux likes
+app.use("/", likeRoutes);
 
 // FIN ROUTES
 

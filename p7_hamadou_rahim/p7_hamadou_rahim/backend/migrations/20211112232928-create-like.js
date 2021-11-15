@@ -2,6 +2,7 @@
 module.exports = {
 	up: (queryInterface, Sequelize) => {
 		return queryInterface.createTable("Likes", {
+			// On precise les references lors de la creations
 			id: {
 				allowNull: false,
 				autoIncrement: true,

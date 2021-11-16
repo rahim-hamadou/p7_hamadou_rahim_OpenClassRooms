@@ -1,0 +1,49 @@
+//Palette color norme contrast WCAG
+$colorBG: #fff;
+$gris: #797676;
+
+.main {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding-top: 100px;
+	&--connect {
+		background-image: url("../assets/bg-login-signup.jpg");
+		background-size: cover;
+		.block-demi-container {
+			flex: 1;
+		}
+		.form-block {
+			background-color: #e77810bf;
+			&--left {
+				background-color: #7a7272bf;
+				display: flex;
+			}
+			@media screen and (max-width: 425px) {
+				width: 100%;
+				margin: 0;
+			}
+			.logo {
+				width: 80%;
+				margin: auto;
+			}
+		}
+		.redirection-singup {
+			color: rgb(4, 31, 36);
+			border: 1px solid black;
+			border-radius: 3px;
+			padding: 0.2rem;
+			&:hover,
+			&:focus {
+				background-color: green;
+				color: white;
+			}
+		}
+	}
+}
+
+.bi-three-dots {
+	cursor: pointer;
+}

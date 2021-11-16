@@ -1,4 +1,4 @@
-Groupomania
+** Groupomania **
 
 Projet 7 du parcours Développeur web d'OpenClassrooms
 
@@ -14,7 +14,7 @@ MySQL
 Vue.js
 ```
 
-Installation
+** Installation **
 
 -   Clonez ce repository.
 
@@ -28,7 +28,7 @@ Installation
 
 -   Ensuite, depuis le dossier frontend du projet, utilisez la commande npm run serve. Rendez-vous ensuite à l'adresse http://localhost:8080/
 
-Creation d'un compte de moderation:
+** Creation d'un compte de moderation: **
 
 Il faudra penser a creer un compte Admin , qui aura la possibilité de moderé les posts.
 
@@ -39,3 +39,22 @@ Il faudra penser a creer un compte Admin , qui aura la possibilité de moderé l
 -   Mise a jour de la valeur de isAdmin : UPDATE Users SET isAdmin = '1' WHERE id = "id_du_compte";
 
 Apres cela le compte pourra modérer , une fois connecté.
+
+** MySQL **
+
+-   Voir les databases
+
+"SHOW DATABASES;"
+
+-   Voir les tables
+
+"SHOW tables;"
+
+-   Voir les Users
+
+"SELECT \* from Users;"
+
+-   Suppression de users depuis mysql:
+
+"SELECT \* from Users;"
+"DELETE FROM `Users` WHERE id = "id_du_compte";"

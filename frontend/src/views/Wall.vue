@@ -1,5 +1,8 @@
 <template>
 	<div id="wall" class="wall">
+		<!-- <div class="logo-home">
+			<img src="../assets/icon-above-font.png" />
+		</div> -->
 		<CreatePost />
 		<Post v-for="post in allPosts" v-bind:key="post.id" :post="post" @infosPost="setInfos" />
 		<modalBoxModerate :post="post" />
@@ -72,10 +75,11 @@ export default {
 	background-color: #e77810bf;
 	min-height: 100%;
 	padding: 5rem 0 2rem 0;
+	margin-top: 150px;
 }
 .block-post {
 	background-color: #e0d2c5;
-	width: 75%;
+	width: 85%;
 	margin: auto;
 	box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.25);
 	border-radius: 0.25rem;
@@ -100,6 +104,12 @@ export default {
 		}
 		font-weight: 700;
 		color: grey;
+	}
+
+	@media (max-width: 490px) {
+		.custom-file label {
+			color: hsla(0, 0%, 0%, 0);
+		}
 	}
 }
 </style>

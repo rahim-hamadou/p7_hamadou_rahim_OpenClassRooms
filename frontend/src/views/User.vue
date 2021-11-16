@@ -12,18 +12,18 @@
 					<u>Informations de l'utilisateur</u>
 				</h2>
 				<div class="user-info__block">
-					<p class="user-info__block__title mb-0">Email</p>
+					<p class="user-info__block__title mb-0">Email :</p>
 					<p class="user-info__block__output">
 						<small>{{ user.email }}</small>
 					</p>
 				</div>
 				<div class="user-info__block">
-					<p class="user-info__block__title mb-0">Username</p>
+					<p class="user-info__block__title mb-0">Username :</p>
 					<p class="user-info__block__output">
 						<small>{{ user.username }}</small>
 					</p>
 					<p class="user-info__block__title mb-0">
-						Admin
+						Administrateur :
 					</p>
 					<p class="user-info__block__output">
 						<small v-if="user.isAdmin == true">Oui</small>
@@ -32,7 +32,7 @@
 				</div>
 				<div class="user-info__block d-sm-flex justify-content-between user-info__block--flex">
 					<div class="user-info__block">
-						<p class="user-info__block__title mb-0">Password</p>
+						<p class="user-info__block__title mb-0">Password :</p>
 						<small class="user-info__block__output">
 							Doit contenir au minimum 8 caractères dont une majuscule, et au minimum un caractère
 							numérique et un caractère spécial
@@ -59,7 +59,7 @@
 						<div class="modal-dialog">
 							<div class="modal-content">
 								<div class="modal-header">
-									<h5 class="modal-title" id="BoxModalChgPwd__title">Change Password</h5>
+									<h5 class="modal-title" id="BoxModalChgPwd__title">Changer Password</h5>
 									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 										<span aria-hidden="true">&times;</span>
 									</button>
@@ -91,9 +91,9 @@
 									</form>
 								</div>
 								<div class="modal-footer">
-									<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+									<button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
 									<button type="button" class="btn btn-primary" @click="changePassword">
-										Save changes
+										Sauvegarder
 									</button>
 								</div>
 								<p id="retour-api" class="text-center">{{ retourAPI }}</p>
@@ -103,7 +103,7 @@
 					<!--END: Box Modal pour changement PWD-->
 				</div>
 				<button type="button" class="btn btn-danger white d-block mx-auto mt-5 mb-2" @click="deleteAccount">
-					Delete account
+					Supprimer le compte
 				</button>
 			</div>
 		</section>

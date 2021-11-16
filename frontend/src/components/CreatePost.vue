@@ -25,7 +25,7 @@
 						<label class="custom-file-label" for="inputFile">Choisir un fichier</label>
 					</div>
 				</div>
-				<input type="submit" class="btn btn-primary" @click.prevent="createPost" value="Submit" />
+				<input type="submit" class="btn btn-primary" @click.prevent="createPost" value="Soumettre" />
 				<span id="msgReturnAPI" class="mx-3 text-danger" v-if="user.token == null"
 					>Veuillez vous connecter</span
 				>

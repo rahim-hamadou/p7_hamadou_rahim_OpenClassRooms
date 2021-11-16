@@ -25,7 +25,7 @@
 					<label for="inputPassword">Password</label>
 					<input type="password" class="form-control" id="inputPassword" v-model="dataSignup.password" />
 				</div>
-				<button @click.prevent="sendSignup" type="submit" class="btn btn-primary">Submit</button>
+				<button @click.prevent="sendSignup" type="submit" class="btn btn-primary">Soumettre</button>
 			</div>
 		</form>
 	</main>
@@ -73,6 +73,8 @@ export default {
 						this.dataSignup.password = null;
 					})
 					.catch((error) => console.log(error));
+				window.location.reload();
+				// window.location.replace("./Login.vue");
 			} else {
 				alert("oops ! Un problème est survenue avec vos saisies");
 			}

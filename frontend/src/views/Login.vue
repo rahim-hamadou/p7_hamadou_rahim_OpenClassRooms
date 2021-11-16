@@ -1,28 +1,28 @@
 <template>
 	<main class="main main--connect">
-		<form class="w-75 align-items-center form-block d-flex m-auto shadow rounded">
+		<form class="w-75 align-items-center form-block d-flex center-home shadow rounded">
 			<div
 				class="form-block--left d-flex flex-column justify-content-center block-demi-container p-3 text-right align-self-stretch"
 			>
 				<img class="logo align-self-end" src="../assets/icon.svg" alt="Logo Groupomania" />
-				<p class="center-element">
+				<div class="center-element">
 					<small>
-						Vous n'avez pas encore de compte,
+						<span> Vous n'avez pas encore de compte,</span>
 						<router-link class="redirection-singup " to="/signup">enregistrez-vous</router-link>
 					</small>
-				</p>
+				</div>
 			</div>
 			<div class="block-demi-container p-3">
 				<div class="form-group">
 					<label for="inputUsername">Username</label>
 					<input type="text" class="form-control" id="inputUsername" v-model="dataLogin.username" />
 				</div>
-				ap
+
 				<div class="form-group">
 					<label for="inputPassword">Password</label>
 					<input type="password" class="form-control" id="inputPassword" v-model="dataLogin.password" />
 				</div>
-				<button @click.prevent="logIn" type="submit" class="btn btn-primary">Submit</button>
+				<button @click.prevent="logIn" type="submit" class="btn btn-primary">Soumettre</button>
 			</div>
 		</form>
 	</main>
@@ -59,7 +59,10 @@ export default {
 						localStorage.setItem("token", response.data.token);
 						location.replace(location.origin);
 					})
-					.catch((error) => console.log(error));
+					.catch((error) => {
+						console.log(error);
+						alert("Connexion impossible , veuillez verifier les identifiants");
+					});
 			} else {
 				console.log("oops !");
 			}
@@ -71,5 +74,8 @@ export default {
 <style lang="scss">
 .center-element {
 	margin: auto;
+}
+.center-home {
+	margin: 150px auto;
 }
 </style>

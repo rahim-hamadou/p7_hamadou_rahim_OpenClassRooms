@@ -4,14 +4,14 @@
 			<h3>Créer un post</h3>
 			<form enctype="multipart/form-data" action="/create" method="post">
 				<div class="input-group mb-3">
-					<label for="input_text">Racontez nous une incroyable histoire:</label>
+					<label for="input_text">Racontez nous tout :</label>
 					<br />
 					<input v-model="contentPost.content" class="input-text" id="input_text" type="text" />
 				</div>
 
 				<div class="input-group mb-3">
 					<div class="input-group-prepend">
-						<span class="input-group-text" id="inputFileAddon">Upload</span>
+						<span class="input-group-text" id="inputFileAddon">Media</span>
 					</div>
 					<div class="custom-file">
 						<input
@@ -22,7 +22,7 @@
 							aria-describedby="inputFileAddon"
 							@change="onFileChange"
 						/>
-						<label class="custom-file-label" for="inputFile">Choose file</label>
+						<label class="custom-file-label" for="inputFile">Choisir un fichier</label>
 					</div>
 				</div>
 				<input type="submit" class="btn btn-primary" @click.prevent="createPost" value="Submit" />

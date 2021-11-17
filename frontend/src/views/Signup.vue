@@ -1,6 +1,6 @@
 <template>
 	<main class="main main--connect">
-		<form class="w-75 align-items-center form-block d-flex m-auto shadow rounded">
+		<form class="w-75 align-items-center form-block center-home shadow rounded">
 			<div
 				class="form-block--left d-flex flex-column justify-content-center block-demi-container p-3 text-right align-self-stretch"
 			>
@@ -12,7 +12,7 @@
 					</small>
 				</p>
 			</div>
-			<div class="block-demi-container p-3">
+			<div class="block-demi-container p-3 align-element ">
 				<div class="form-group">
 					<label for="inputEmail">Email Groupomania</label>
 					<input type="email" class="form-control" id="inputEmail" v-model="dataSignup.email" />
@@ -83,4 +83,24 @@ export default {
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+.center-home {
+	margin: 150px auto;
+}
+form {
+	display: flex;
+
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+}
+
+@media (max-width: 490px) {
+	// form {
+	// 	// d-flex
+	// 	display: flex;
+	// 	flex-direction: column;
+	// 	margin: auto;
+	// }
+}
+</style>

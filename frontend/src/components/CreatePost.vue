@@ -36,7 +36,9 @@
 </template>
 
 <script>
+// librairie js qui interroge le server sans reload la page
 import axios from "axios";
+//
 import { mapState } from "vuex";
 
 export default {

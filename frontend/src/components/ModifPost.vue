@@ -128,7 +128,8 @@ export default {
 						setTimeout(() => {
 							this.retourAPI = "";
 							// window.location.reload();
-						}, 2000);
+							// rechargement de la page pour validé les modifications
+						}, 1000);
 					})
 					.catch((err) => {
 						console.log("admin", err);

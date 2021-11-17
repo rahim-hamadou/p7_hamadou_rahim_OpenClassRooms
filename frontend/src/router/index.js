@@ -1,4 +1,5 @@
 import Vue from "vue";
+// librairie js servant a la gestion des routes
 import VueRouter from "vue-router";
 
 Vue.use(VueRouter);

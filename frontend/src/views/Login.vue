@@ -1,6 +1,6 @@
 <template>
 	<main class="main main--connect">
-		<form class="w-75 align-items-center form-block d-flex center-home shadow rounded">
+		<form class="w-75 align-items-center form-block  center-home shadow rounded">
 			<div
 				class="form-block--left d-flex flex-column justify-content-center block-demi-container p-3 text-right align-self-stretch"
 			>
@@ -12,7 +12,7 @@
 					</small>
 				</div>
 			</div>
-			<div class="block-demi-container p-3">
+			<div class="block-demi-container p-3 align-element ">
 				<div class="form-group">
 					<label for="inputUsername">Username</label>
 					<input type="text" class="form-control" id="inputUsername" v-model="dataLogin.username" />

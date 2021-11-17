@@ -15,15 +15,36 @@ $gris: #797676;
 		.block-demi-container {
 			flex: 1;
 		}
+		.center-element small {
+			text-align: center;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		.align- {
+		}
 		.form-block {
 			background-color: #e77810bf;
 			&--left {
 				background-color: #7a7272bf;
 				display: flex;
 			}
-			@media screen and (max-width: 425px) {
+			@media screen and (max-width: 500px) {
 				width: 100%;
-				margin: 0;
+				// margin: 0;
+				margin: 150px auto;
+				.center-element small {
+					text-align: center;
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+				}
+				.align-element {
+					text-align: center;
+					// display: flex;
+					// flex-direction: column;
+					// align-items: center;
+				}
 			}
 			.logo {
 				width: 80%;

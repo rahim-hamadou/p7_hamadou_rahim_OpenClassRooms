@@ -23,11 +23,11 @@
 						<small>{{ user.username }}</small>
 					</p>
 					<p class="user-info__block__title mb-0">
-						Administrateur :
+						Role :
 					</p>
 					<p class="user-info__block__output">
-						<small v-if="user.isAdmin == true">Oui</small>
-						<small v-if="user.isAdmin == false">Non</small>
+						<small v-if="user.isAdmin == true">Administrateur</small>
+						<small v-if="user.isAdmin == false">Utilisateur</small>
 					</p>
 				</div>
 				<div class="user-info__block d-sm-flex justify-content-between user-info__block--flex">

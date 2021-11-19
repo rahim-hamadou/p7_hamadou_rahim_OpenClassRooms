@@ -53,7 +53,7 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-					<button type="button" class="btn btn-danger" @click="deletePost">Delete post</button>
+					<button type="button" class="btn btn-danger" @click="deletePost">Supprimer le post</button>
 				</div>
 			</div>
 		</div>

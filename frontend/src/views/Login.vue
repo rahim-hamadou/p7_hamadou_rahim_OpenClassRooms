@@ -1,6 +1,6 @@
 <template>
 	<main class="main main--connect">
-		<form class="w-75 align-items-center form-block  center-home shadow rounded">
+		<form class="w-75 align-items-center form-block  center-home shadow rounded align-vert align-hori ">
 			<div
 				class="form-block--left d-flex flex-column justify-content-center block-demi-container p-3 text-right align-self-stretch"
 			>

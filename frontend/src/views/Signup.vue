@@ -1,6 +1,6 @@
 <template>
 	<main class="main main--connect">
-		<form class="w-75 align-items-center form-block center-home shadow rounded">
+		<form class="w-75 align-items-center form-block center-home shadow rounded align-vert align-hori ">
 			<div
 				class="form-block--left d-flex flex-column justify-content-center block-demi-container p-3 text-right align-self-stretch"
 			>
@@ -87,20 +87,19 @@ export default {
 .center-home {
 	margin: 150px auto;
 }
-form {
+.align-hori {
 	display: flex;
-
 	flex-direction: row;
 	flex-wrap: nowrap;
 	justify-content: center;
 }
 
 @media (max-width: 490px) {
-	// form {
-	// 	// d-flex
-	// 	display: flex;
-	// 	flex-direction: column;
-	// 	margin: auto;
-	// }
+	.align-vert {
+		// d-flex
+		display: flex;
+		flex-direction: column;
+		margin: auto;
+	}
 }
 </style>

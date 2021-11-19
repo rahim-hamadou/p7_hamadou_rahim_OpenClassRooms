@@ -209,4 +209,8 @@ export default {
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+h1 {
+	margin-top: 40px;
+}
+</style>

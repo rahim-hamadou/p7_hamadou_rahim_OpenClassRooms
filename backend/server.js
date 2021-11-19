@@ -44,5 +44,5 @@ server.on("listening", () => {
 	const bind = typeof address === "string" ? "pipe " + address : "port " + port;
 	console.log("Listening on " + bind);
 });
-
+// demarrer le server et ecouter le port defini
 server.listen(port);

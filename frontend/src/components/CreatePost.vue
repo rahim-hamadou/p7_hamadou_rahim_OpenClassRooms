@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<div class="block-post">
+		<div class="block-post ">
 			<h3>Créer un post</h3>
 			<form enctype="multipart/form-data" action="/create" method="post">
 				<div class="input-group mb-3">
@@ -26,7 +26,7 @@
 					</div>
 				</div>
 				<input type="submit" class="btn btn-primary" @click.prevent="createPost" value="Soumettre" />
-				<span id="msgReturnAPI" class="mx-3 text-danger" v-if="user.token == null"
+				<span id="msgReturnAPI" class="mx-3 text-danger " v-if="user.token == null"
 					>Veuillez vous connecter</span
 				>
 				<span id="msgReturnAPI" class="mx-3" v-else>{{ msgError }}</span>

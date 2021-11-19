@@ -10,8 +10,16 @@ $gris: #797676;
 	right: 0;
 	padding-top: 100px;
 	&--connect {
-		background-image: url("../assets/bg-login-signup.jpg");
+		// background-image: url("../assets/bg-login-signup.jpg");
+		// background-image: url("../assets/fond-leger.jpg");
+		background-image: url("../assets/fond.jpeg");
 		background-size: cover;
+		background-position: center;
+		height: fit-content;
+		@media screen and (max-width: 500px) {
+			background-size: cover;
+			height: fit-content;
+		}
 		.block-demi-container {
 			flex: 1;
 		}
@@ -21,8 +29,7 @@ $gris: #797676;
 			flex-direction: column;
 			align-items: center;
 		}
-		.align- {
-		}
+
 		.form-block {
 			background-color: #e77810bf;
 			&--left {
@@ -64,7 +71,24 @@ $gris: #797676;
 		}
 	}
 }
+.opacity-banner {
+	opacity: 0.33;
+}
+.block-post form span {
+	font-weight: bolder;
+	font-size: 120%;
+}
 
+.input-group {
+	display: flex;
+	align-items: center;
+}
+.input-group-text {
+	padding-bottom: 5px;
+	padding-top: 5px;
+}
 .bi-three-dots {
 	cursor: pointer;
+}
+@media screen and (max-width: 500px) {
 }

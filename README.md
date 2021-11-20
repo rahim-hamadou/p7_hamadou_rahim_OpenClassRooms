@@ -58,3 +58,8 @@ Apres cela le compte pourra modérer , une fois connecté.
 
 "SELECT \* from Users;"
 "DELETE FROM `Users` WHERE id = "id_du_compte";"
+
+-   Presentation:
+    le compte admin pour ma presentation est :
+    id: admin
+    mdp:Admin123!

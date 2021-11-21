@@ -75,6 +75,12 @@ export default {
 .center-element {
 	margin: auto;
 }
+.align-hori {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+}
 .center-home {
 	margin: 150px auto;
 }

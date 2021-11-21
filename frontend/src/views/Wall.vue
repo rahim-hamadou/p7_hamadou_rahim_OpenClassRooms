@@ -1,5 +1,6 @@
 <template>
 	<div id="wall" class="wall">
+		<!-- logo de l'app -->
 		<!-- <div class="logo-home">
 			<img src="../assets/icon-above-font.png" />
 		</div> -->
@@ -10,7 +11,9 @@
 </template>
 
 <script>
+// pour l'appel au backend
 import axios from "axios";
+// pour l'appel aux components
 import CreatePost from "../components/CreatePost";
 import Post from "../components/Post";
 import modalBoxModerate from "../components/ModifPost";

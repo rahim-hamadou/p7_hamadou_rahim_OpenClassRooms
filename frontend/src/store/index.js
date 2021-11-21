@@ -1,3 +1,5 @@
+// Vuex nous permets d'utiliser des données dans plusieurs components et views
+
 import Vue from "vue";
 import Vuex from "vuex";
 import axios from "axios";
@@ -5,6 +7,7 @@ import axios from "axios";
 Vue.use(Vuex);
 
 export default new Vuex.Store({
+	// State : Etat general de nos données
 	state: {
 		user: {
 			username: "Nc",
@@ -15,6 +18,12 @@ export default new Vuex.Store({
 		},
 		editOption: "",
 	},
+
+	// Getters: permets de recuperer de facon dinamique nos données
+
+	// getters: {},
+
+	// Mutations: modification synchrone de l'etat de nos données
 	mutations: {
 		saveUserInfos(state, [username, userId, email, isAdmin]) {
 			(state.user.username = username),
@@ -27,6 +36,7 @@ export default new Vuex.Store({
 			state.editOption = value;
 		},
 	},
+	// Action : modifictaion asynchrone de l'etat de nos données ( attente du retour server)
 	actions: {
 		getUserInfos(context) {
 			axios

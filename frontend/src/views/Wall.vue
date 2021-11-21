@@ -45,6 +45,7 @@ export default {
 			this.post = payload.post;
 		},
 	},
+	// a la creation  de la page
 	mounted() {
 		axios
 			.get("http://localhost:3000/api/post", {
@@ -53,6 +54,7 @@ export default {
 				},
 			})
 			//.get("http://localhost:3000/api/post",this.$store.state.headerParams)
+			// on recupere et defini un objet qui represente la data de la reponse
 			.then((response) => {
 				console.log("post", response.data);
 				this.allPosts = response.data;

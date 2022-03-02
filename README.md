@@ -9,8 +9,8 @@ Vous devez avoir Node et npm installés localement sur votre machine (avec le pl
 Pour installer ce projet veuillez vous procurer :
 
 ```
-Node.js
-MySQL
+Installer Node.js
+Lancer MySQL
 Vue.js
 ```
 

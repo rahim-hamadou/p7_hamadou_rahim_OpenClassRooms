@@ -24,9 +24,9 @@ Vue.js
 
 -   Import sauvegarde.sql
 
--   Pour démarrer le serveur, placez-vous dans le dossier backend du projet puis exécutez la commande npm install & enfin nodemon server.
+-   Pour démarrer le serveur, placez-vous dans le dossier backend du projet puis exécutez la commande : `npm install & enfin nodemon server`
 
--   Ensuite, depuis le dossier frontend du projet, utilisez la commande npm run serve. Rendez-vous ensuite à l'adresse http://localhost:8080/
+-   Ensuite, depuis le dossier frontend du projet, utilisez la commande :`npm run serve`. Rendez-vous ensuite à l'adresse http://localhost:8080/ ou le port dedié
 
 ** Creation d'un compte de moderation: **
 

@@ -28,6 +28,22 @@ Vue.js
 
 -   Ensuite, depuis le dossier frontend du projet, utilisez la commande :`npm run serve`. Rendez-vous ensuite à l'adresse http://localhost:8080/ ou le port dedié
 
+-   Presentation:
+
+le compte admin pour ma presentation est :
+
+-   id: admin
+    mdp:Admin123!
+
+les comptes users existants :
+
+-   username : test@gmail.com
+    password:test
+-   username : test123
+    password: Test123!
+-   username : test1
+    password: Test123!
+
 ** Creation d'un compte de moderation: **
 
 Il faudra penser a creer un compte Admin , qui aura la possibilité de moderé les posts.
@@ -58,17 +74,3 @@ Apres cela le compte pourra modérer , une fois connecté.
 
 "SELECT \* from Users;"
 "DELETE FROM `Users` WHERE id = "id_du_compte";"
-
--   Presentation:
-    le compte admin pour ma presentation est :
-    id: admin
-    mdp:Admin123!
-
-les comptes users existants :
-
--   username : test@gmail.com
-    password:test
--   username : test123
-    password: Test123!
--   username : test1
-    password: Test123!

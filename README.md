@@ -63,3 +63,12 @@ Apres cela le compte pourra modérer , une fois connecté.
     le compte admin pour ma presentation est :
     id: admin
     mdp:Admin123!
+
+les comptes users existants :
+
+-   username : test@gmail.com
+    password:test
+-   username : test123
+    password: Test123!
+-   username : test1
+    password: Test123!

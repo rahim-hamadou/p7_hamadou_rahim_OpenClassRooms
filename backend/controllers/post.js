@@ -18,6 +18,7 @@ exports.create = (req, res) => {
 			if (user !== null) {
 				//Récupération du corps du post
 				let content = req.body.content;
+
 				if (req.file != undefined) {
 					attachmentURL = `${req.protocol}://${req.get("host")}/images/${req.file.filename}`;
 				} else {

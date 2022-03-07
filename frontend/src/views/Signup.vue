@@ -73,10 +73,11 @@ export default {
 						this.dataSignup.password = null;
 					})
 					.catch((error) => console.log(error));
-				window.location.reload();
-				// window.location.replace("./Login.vue");
+				this.$router.replace("./login");
 			} else {
-				alert("oops ! Un problème est survenue avec vos saisies");
+				alert(
+					"oops ! Un problème est survenue avec vos saisies, verifiez les champs de saisies : @mail au format valide et password de six caracteres contenant une majuscule et un chiffre ",
+				);
 			}
 		},
 	},

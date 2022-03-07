@@ -1,6 +1,11 @@
 <template>
 	<div>
-		<div class="block-post ">
+		<div v-if="user.token == null" class="centerTitle">
+			<h1 id="msgReturnAPI" class="mx-3 text-alert ">Bienvenue sur Groupomania.</h1>
+
+			<p class="mx-3 text-danger ">Veuillez vous connecter avant tout !</p>
+		</div>
+		<div v-else class="block-post ">
 			<h3>Créer un post</h3>
 			<form enctype="multipart/form-data" action="/create" method="post">
 				<div class="input-group mb-3">
@@ -99,5 +104,13 @@ export default {
 }
 .wall {
 	margin-top: 100px;
+}
+.centerTitle {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.centerTitle p {
+	font-size: 28px;
 }
 </style>

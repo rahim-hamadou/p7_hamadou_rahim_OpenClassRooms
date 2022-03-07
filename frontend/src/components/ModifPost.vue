@@ -168,7 +168,37 @@ export default {
 			}
 		},
 		deleteImgAction() {
+			let newInput = document.getElementById("inputNewText").value;
 			this.deleteImg = true;
+			this.post.attachement = null;
+
+			axios
+				.put(
+					"http://localhost:3000/api/post/update",
+					{
+						postId: this.post.id,
+						userIdOrder: this.user.userId,
+						newText: newInput,
+					},
+					{
+						headers: {
+							authorization: "Bearer " + localStorage.getItem("token"),
+						},
+					},
+				)
+				.then((response) => {
+					console.log("reponse API", response);
+					this.retourAPI = response.data.confirmation;
+					setTimeout(() => {
+						this.retourAPI = "";
+						// rechargement de la page pour validé les modifications
+						window.location.reload();
+					}, 2500);
+				})
+				.catch((err) => {
+					console.log("admin", err);
+					this.retourAPI = "Une erreur est survenue, vérifier vos saisies";
+				});
 		},
 	},
 };

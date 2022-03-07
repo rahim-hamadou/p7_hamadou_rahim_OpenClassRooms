@@ -3,8 +3,7 @@
 		<div class="card-header d-flex justify-content-between">
 			<div>
 				Posté par <em class="text-secondary">{{ post.User.username }}</em>
-				<!-- le
-				{{ post.createdAt }} -->
+				<!-- le {{ post.User }} -->
 				<!-- <em class="text-secondary">{{ post.createdAt.split(" ")[0] }}</em> à
 				<em class="text-secondary">{{ post.createdAt.split(" ")[1] }}</em> -->
 			</div>

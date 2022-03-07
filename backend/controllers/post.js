@@ -20,8 +20,10 @@ exports.create = (req, res) => {
 				let content = req.body.content;
 				if (req.file != undefined) {
 					attachmentURL = `${req.protocol}://${req.get("host")}/images/${req.file.filename}`;
+				} else {
 					attachmentURL == null;
 				}
+
 				if (content == "null" && attachmentURL == null) {
 					res.status(400).json({ error: "Rien à publier" });
 				} else {
@@ -50,8 +52,7 @@ exports.listMsg = (req, res) => {
 		include: [
 			{
 				model: models.User,
-				model: models.Post,
-				attributes: ["username", "createdAt"],
+				attributes: ["username"],
 			},
 		],
 		// ordre des posts

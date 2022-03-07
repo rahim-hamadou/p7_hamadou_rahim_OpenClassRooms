@@ -2,9 +2,11 @@
 	<div class="card mb-4 w-75 mx-auto">
 		<div class="card-header d-flex justify-content-between">
 			<div>
-				Posté par <em class="text-secondary">{{ post.User.username }}</em> le
-				<em class="text-secondary">{{ post.createdAt.split(" ")[0] }}</em> à
-				<em class="text-secondary">{{ post.createdAt.split(" ")[1] }}</em>
+				Posté par <em class="text-secondary">{{ post.User.username }}</em>
+				<!-- le
+				{{ post.createdAt }} -->
+				<!-- <em class="text-secondary">{{ post.createdAt.split(" ")[0] }}</em> à
+				<em class="text-secondary">{{ post.createdAt.split(" ")[1] }}</em> -->
 			</div>
 			<div class="dropdown" v-if="user.isAdmin == true || user.username == post.User.username">
 				<svg

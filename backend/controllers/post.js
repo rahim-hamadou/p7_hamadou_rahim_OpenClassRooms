@@ -13,13 +13,13 @@ exports.create = (req, res) => {
 		attributes: ["id", "email", "username"],
 		where: { id: id },
 	})
+
 		.then((user) => {
 			if (user !== null) {
 				//Récupération du corps du post
 				let content = req.body.content;
 				if (req.file != undefined) {
 					attachmentURL = `${req.protocol}://${req.get("host")}/images/${req.file.filename}`;
-				} else {
 					attachmentURL == null;
 				}
 				if (content == "null" && attachmentURL == null) {
@@ -50,7 +50,8 @@ exports.listMsg = (req, res) => {
 		include: [
 			{
 				model: models.User,
-				attributes: ["username"],
+				model: models.Post,
+				attributes: ["username", "createdAt"],
 			},
 		],
 		// ordre des posts

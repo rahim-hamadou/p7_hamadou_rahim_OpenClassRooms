@@ -16,17 +16,22 @@ Vue.js
 
 ** Installation **
 
--   Clonez ce repository.
+-   Clonez ce repository: https://github.com/RahimHamadou/p7_hamadou_rahim.git
 
 -   Configure `config/config.json`
 
--   Lancer la cmd dans le terminal `sequelize db:create && sequelize db:migrate`
+-   Lancer la commande : `npm install`
 
--   Import sauvegarde.sql
+-   Lancer la commande : `node server.js`
 
--   Pour démarrer le serveur, placez-vous dans le dossier backend du projet puis exécutez la commande : `npm install & enfin nodemon server` ( voir les options de securité et confidentialité si erreur)
+-   Pour démarrer le serveur, placez-vous dans le dossier backend du projet puis exécutez la commande : `npm install` & enfin `node server.js` ( voir les options de securité et confidentialité si erreur)
 
--   Ensuite, depuis le dossier frontend du projet, utilisez la commande :` npm install, npm i @vue/cli-service , npm run serve`. Rendez-vous ensuite à l'adresse http://localhost:8080/ ou le port dedié
+-   Ensuite, depuis le dossier frontend du projet, utilisez la commande :
+-   `npm install`
+
+-   `npm run serve`
+
+-   Rendez-vous ensuite à l'adresse http://localhost:8080/ ou le port dedié
 
 -   Presentation:
 
@@ -34,15 +39,6 @@ le compte admin pour ma presentation est :
 
 -   id: admin
     mdp:Admin123!
-
-les comptes users existants :
-
--   username : test@gmail.com
-    password:test
--   username : test123
-    password: Test123!
--   username : test1
-    password: Test123!
 
 ** Creation d'un compte de moderation: **
 

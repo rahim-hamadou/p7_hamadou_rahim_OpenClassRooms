@@ -44,6 +44,8 @@
 			<div class="modal-content" v-else>
 				<div class="modal-header">
 					<h5 class="modal-title" id="ModalLabel">Supprimer ce post (id: {{ post.id }})</h5>
+
+					<!-- <h5 class="modal-title" id="ModalLabel">Supprimer ce post de l'user: {{ post.User.username }}</h5> -->
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>

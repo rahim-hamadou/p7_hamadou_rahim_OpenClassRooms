@@ -18,7 +18,7 @@ exports.create = (req, res) => {
 			if (user !== null) {
 				//Récupération du corps du post
 				let content = req.body.content;
-
+				let contentDate = req.body.createdAt;
 				if (req.file != undefined) {
 					attachmentURL = `${req.protocol}://${req.get("host")}/images/${req.file.filename}`;
 				} else {
@@ -40,6 +40,8 @@ exports.create = (req, res) => {
 							res.status(500).json(err);
 						});
 				}
+				console.log(contentDate);
+				console.log(contentDate);
 			} else {
 				res.status(400).json(error);
 			}

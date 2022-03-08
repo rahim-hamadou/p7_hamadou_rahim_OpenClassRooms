@@ -2,9 +2,9 @@
 	<div class="card mb-4 w-75 mx-auto">
 		<div class="card-header d-flex justify-content-between">
 			<div>
-				Posté par <em class="text-secondary">{{ post.User.username }}</em>
-				<!-- qui est le: {{ post.UserId }} inscrit
-				sur le reseau -->
+				Posté par <em class="text-secondary">{{ post.User.username }}</em> le:
+				<!-- <em class="text-secondary">{{ contentPost.content }}</em> -->
+
 				<!-- <em class="text-secondary">{{ post.createdAt.split(" ")[0] }}</em> à
 				<em class="text-secondary">{{ post.createdAt.split(" ")[1] }}</em> -->
 			</div>
@@ -56,10 +56,12 @@
 		</div>
 		<div class="card-body">
 			<div class="card-img-top w-75 mx-auto" v-if="post.attachement">
-				<img :src="post.attachement" alt="..." class="w-100" />
+				<img :src="post.attachement" alt="un media" class="w-100" />
 			</div>
 			<div class="card-text" v-if="post.content !== 'null'">
 				<p class="mb-0">{{ post.content }}</p>
+
+				<!-- <p class="mb-0">{{ post.attachement }}</p> -->
 			</div>
 		</div>
 	</div>

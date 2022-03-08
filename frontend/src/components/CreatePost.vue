@@ -27,7 +27,16 @@
 							aria-describedby="inputFileAddon"
 							@change="onFileChange"
 						/>
-						<label class="custom-file-label" for="inputFile">Choisir un fichier</label>
+
+						<label v-if="this.contentPost.postImage == null" class="custom-file-label" for="inputFile"
+							>Choisir un fichier
+						</label>
+						<label v-else class="custom-file-label" for="inputFile">
+							<p>
+								<!-- {{ toString(post.content) }} -->
+								{{ this.contentPost.postImage.name }}
+							</p>
+						</label>
 					</div>
 				</div>
 				<input type="submit" class="btn btn-primary" @click.prevent="createPost" value="Soumettre" />

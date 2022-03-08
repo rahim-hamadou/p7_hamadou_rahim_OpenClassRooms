@@ -5,6 +5,7 @@
 			<img src="../assets/icon-above-font.png" />
 		</div> -->
 		<CreatePost />
+
 		<Post v-for="post in allPosts" v-bind:key="post.id" :post="post" @infosPost="setInfos" />
 		<modalBoxModerate :post="post" />
 	</div>

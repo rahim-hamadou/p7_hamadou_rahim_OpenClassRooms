@@ -1,12 +1,18 @@
 <template>
 	<div class="card mb-4 w-75 mx-auto">
 		<div class="card-header d-flex justify-content-between">
-			<div>
-				Posté par <em class="text-secondary">{{ post.User.username }}</em> le:
-				<!-- <em class="text-secondary">{{ contentPost.content }}</em> -->
+			<div v-if="post.attachement == null">
+				Posté par <em class="text-secondary">{{ post.User.username }}</em>
 
 				<!-- <em class="text-secondary">{{ post.createdAt.split(" ")[0] }}</em> à
 				<em class="text-secondary">{{ post.createdAt.split(" ")[1] }}</em> -->
+			</div>
+			<div class="infoMedia" v-else>
+				Posté par <em class="text-secondary">{{ post.User.username }}</em>
+				<p>
+					avec :
+					<em class="text-secondary"> {{ post.attachement }}</em>
+				</p>
 			</div>
 			<div class="dropdown" v-if="user.isAdmin == true || user.username == post.User.username">
 				<svg
@@ -96,4 +102,10 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.infoMedia {
+	/* white-space: nowrap; */
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+</style>

@@ -28,10 +28,10 @@
 							@change="onFileChange"
 						/>
 
-						<label v-if="this.contentPost.postImage == null" class="custom-file-label" for="inputFile"
+						<label v-if="this.contentPost.postImage == null" class="custom-file-label " for="inputFile"
 							>Choisir un fichier
 						</label>
-						<label v-else class="custom-file-label" for="inputFile">
+						<label v-else class="custom-file-label infoMedia" for="inputFile">
 							<p>
 								<!-- {{ toString(post.content) }} -->
 								{{ this.contentPost.postImage.name }}
@@ -121,5 +121,13 @@ export default {
 }
 .centerTitle p {
 	font-size: 28px;
+}
+
+@media screen and (max-width: 700px) {
+	.infoMedia {
+		white-space: wrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
 }
 </style>

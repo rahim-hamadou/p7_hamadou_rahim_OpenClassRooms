@@ -7,10 +7,12 @@ const fs = require("fs");
 exports.create = (req, res) => {
 	//Declaration de l'url de l'image
 	let attachmentURL;
+	//Declaration de la date
+	let contentDate = new Date();
 	//identifier qui créé le message
 	let id = utils.getUserId(req.headers.authorization);
 	models.User.findOne({
-		attributes: ["id", "email", "username"],
+		attributes: ["id", "email", "username", "createdAt"],
 		where: { id: id },
 	})
 
@@ -32,6 +34,7 @@ exports.create = (req, res) => {
 						content: content,
 						attachement: attachmentURL,
 						UserId: user.id,
+						contentDate: contentDate,
 					})
 						.then((newPost) => {
 							res.status(201).json(newPost);
@@ -40,8 +43,9 @@ exports.create = (req, res) => {
 							res.status(500).json(err);
 						});
 				}
-				console.log(contentDate);
-				console.log(contentDate);
+				// console.log(contentDate);
+				// console.log(content);
+				// console.log(post);
 			} else {
 				res.status(400).json(error);
 			}
